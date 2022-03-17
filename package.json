@@ -1,14 +1,19 @@
 {
-  "name": "postcss-px-to-rem",
-  "version": "0.0.0",
+  "name": "px-to-rem-postcss",
+  "version": "1.0.0",
   "description": "PostCSS plugin transform px to rem",
-  "keywords": ["postcss", "css", "postcss-plugin", "postcss-px-to-rem"],
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "px-to-rem-postcss"
+  ],
   "scripts": {
     "test": "jest --coverage && eslint ."
   },
-  "author": "artem ilchenko <ailchenko@dynamo-ny.com>",
+  "author": "Artem Ilchenko",
   "license": "MIT",
-  "repository": "tema1411/postcss-px-to-rem",
+  "repository": "tema1411/px-to-rem-postcss",
   "engines": {
     "node": ">=12.0.0"
   },
@@ -30,7 +35,10 @@
       "node": true,
       "es6": true
     },
-    "extends": ["eslint:recommended", "plugin:jest/recommended"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended"
+    ],
     "rules": {
       "jest/expect-expect": "off"
     }

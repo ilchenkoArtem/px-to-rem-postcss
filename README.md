@@ -1,4 +1,4 @@
-# postcss-px-to-rem
+# px-to-rem-postcss
 
 [PostCSS] plugin transform px to rem.
 
@@ -21,7 +21,7 @@
 **Step 1:** Install plugin:
 
 ```sh
-npm install --save-dev postcss postcss-px-to-rem
+npm install --save-dev postcss px-to-rem-postcss
 ```
 
 **Step 2:** Check you project for existed PostCSS config: `postcss.config.js`
@@ -36,7 +36,7 @@ and set this plugin in settings.
 ```diff
 module.exports = {
   plugins: [
-+   require('postcss-px-to-rem'),
++   require('px-to-rem-postcss'),
     require('autoprefixer')
   ]
 }

@@ -2,29 +2,28 @@
  * @type {import('postcss').PluginCreator}
  */
 module.exports = (opts = {}) => {
+  const {rootValue = 16, unitPrecision = 2} = opts;
+
+  /**
+   * @param {number} px
+   */
+  const pxToRem = (px) => {
+    return (px / rootValue).toFixed(unitPrecision)
+  }
+
   // Work with options here
+  const replaceRemFunctionToPx = (value) => {
+    return value.replace(/\$rem\((\d*)\)/g, (match, offset) => (pxToRem(offset)) + 'rem')
+  }
 
   return {
-    postcssPlugin: 'postcss-px-to-rem',
-    /*
-    Root (root, postcss) {
-      // Transform CSS AST here
-    }
-    */
+    postcssPlugin: 'px-to-rem-postcss',
 
-    /*
-    Declaration (decl, postcss) {
-      // The faster way to find Declaration node
-    }
-    */
-
-    /*
-    Declaration: {
-      color: (decl, postcss) {
-        // The fastest way find Declaration node if you know property name
+    Declaration (decl) {
+      if (decl.value.includes('$rem')) {
+        decl.value = replaceRemFunctionToPx(decl.value)
       }
     }
-    */
   }
 }
 
